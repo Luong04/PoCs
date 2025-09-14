@@ -1,6 +1,6 @@
 # RCE from Upload file in ASP.NET
 This is my first writeup, hope you like it!
-Last week, I received a task finding RCE vulns for Redteam ops. Object is a large system provided transport services - V(I don't want to reveal).
+Last week, I received a task finding RCE vulns for Redteam ops. Object is a large system provided transport services - V
 ## Recon
 After recon some subdomains of V, I define some subdomains which has potential to exploit, but it require login credential. So I used google dorking and found an internal document containing username and default password for another subdomain. However, I still use those usernames to login this side because the usernames are typically the company's email account. About passwords, I make a password lists from information I have gathered and default password. This web allows performing bruteforce and not encrypt username and password request :), so it's not too difficult to find some valid account.
 ## Find potential endpoints.
