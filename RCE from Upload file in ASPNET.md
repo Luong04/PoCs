@@ -9,9 +9,9 @@ This is a management website, so there are quite many functions. But as I mentio
 ## Bypass
 It's seem that there is a check at client-side, so I upload a png file - ....png and used Burpsuite to Intercept request, changed it name to ....aspx:<br>
 ![WAF detect](/assets/waf.jpg "WAF detects invalid file extension")
-<br>As I expected, WAF detect malicious files, it retrieved response with header 301 (cloudrity). So I tried some cases may bypass it, such as Double Extension Attack, null byte, bypass content-type,... and it works with this payload:<br>
+<br>As I expected, WAF detect malicious files, it retrieved response with header 301 (cloudrity). So I tried some cases may bypass it, such as Double Extension Attack, null byte, bypass content-type,... finally it works with this payload:<br>
 ![Server handle](/assets/code.jpg "Server uses blacklist to prevent file type")
-<br>A bit dissapointed :), I almost no hope for this situation, after discussion with other guys and research, I found code allow upload config file, So I push this web.config file to allow upload aspx file (webshell).
+<br>A bit dissapointed :),after discussing with other guys and performing research, I found code allow upload config file, So I push this web.config file to allow upload aspx file (webshell).
 We can access the file uploaded by this path:<br>
 ![Upload web.config file](/assets/webconfig.jpg "Upload malicious file")
 ![Upload web.config file](/assets/success.jpg "Access uploaded file successfully")
